@@ -1,0 +1,27 @@
+<h3>There are {{ countries.length }} countries:</h3>
+
+<input type="text" [(ngModel)]="searchText" placeholder="Search by country name">
+
+<br>
+<br>
+
+<table>
+    <tr style="font-weight: bold">
+        <td class="clickable" (click)="sortByName()">Name</td>
+        <td >Region</td>
+        <td>Subregion</td>
+        <td class="clickable" (click)="sortByPopulation()">Population</td>
+        <td class="clickable" (click)="sortByArea()">Area (km2)</td>
+        <td class="clickable" (click)="sortByCapital()">Capital</td>
+        <td>Flag</td>
+    </tr>
+    <tr *ngFor="let c of filteredCountries">
+        <td>{{ c.name.common }}</td>
+        <td>{{ c.region }}</td>
+        <td>{{ c.subregion }}</td>
+        <td>{{ c.population }}</td>
+        <td>{{ c.area }}</td>
+        <td>{{ c.capital }}</td>
+        <td><img src="{{ c.flags.svg }}" width="100px"></td>
+    </tr>
+</table>

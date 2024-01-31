@@ -1,0 +1,9 @@
+<h3 *ngIf="names.length == 1">There is 1 student</h3>
+<h3 *ngIf="names.length > 1"> There are {{ names.length }} students</h3>
+<h3 *ngIf="names.length == 0"> There are no students</h3>
+
+<input #nameInput (keyup.enter)="addName()" type="text" [(ngModel)]="enteredName" required>
+<button (click)="addName()" [disabled]="enteredName.trim() == ''">Add student</button>
+<button (click)="clearNames()" [disabled]="names.length == 0">Clear list</button>
+<br>
+<app-student (OnStudentRemove)="removeStudent($event)" [firstName]="name" *ngFor="let name of names">{{ name }}</app-student>

@@ -1,0 +1,24 @@
+<h1>There are {{ cities.length }} cities</h1>
+
+<table>
+    <tr style="font-weight: bold">
+        <td>ID</td>
+        <td>Name</td>
+        <td>Country</td>
+        <td>Population</td>
+        <td>Year</td>
+        <td>Edit</td>
+    </tr>
+    <tr *ngFor="let city of cities">
+        <td>{{ city.CityID }}</td>
+        <td>{{ city.CityName }}</td>
+        <td>{{ city.Country }}</td>
+        <td>{{ city.Population }}</td>
+        <td>{{ city.Year }}</td>
+        <td>
+            <a [routerLink]="'/city/'+city.CityID">edit</a>
+        </td>
+</table>
+
+
+<a [routerLink]="'/city/'">Add new</a>

@@ -1,0 +1,17 @@
+.student
+{
+    float: left;
+    border: 3px solid green;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+    padding: 0px;
+    width: 100px;
+    background-color: gainsboro;
+}
+
+header
+{
+    background-color: green;
+    color: white;
+}

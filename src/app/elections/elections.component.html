@@ -1,0 +1,21 @@
+<h1>There are {{ parties.length }} parties</h1>
+
+<button (click)="deselectAll()" style="margin-left: 20px;">Reset</button>
+
+<br>
+
+<div class="party"
+(click)="p.isSelected = !p.isSelected"
+[class]="{ selected: p.isSelected }"
+*ngFor="let p of parties">
+{{ p.Naam }}
+</div>
+
+<br style="clear: both">
+
+<h3 [class]="{ majority: isMajority, minority: !isMajority}">Selected seats: {{ this.coalitionSeats }}</h3>
+
+<svg>
+    <rect x="0" y="0" width="150" height="25" fill="lightgrey"></rect>
+    <rect [class]="{ majority: isMajority, minority: !isMajority}" x="0" y="0" [attr.width]="150 * this.coalitionSeats / this.totalSeats" height="25" fill="green"></rect>
+</svg>

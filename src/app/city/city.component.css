@@ -1,0 +1,13 @@
+label {
+    width: 150px;
+    display: inline-block;
+    margin: 10px;
+}
+
+input{
+    width: 500px;
+}
+
+img {
+    width: 500px;
+}

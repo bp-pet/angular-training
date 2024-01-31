@@ -1,0 +1,27 @@
+.party {
+    float: left;
+    margin: 20px;
+    border: solid orangered 3px;
+    border-radius: 10px;
+    background-color: orange;
+    padding: 10px;
+    width: 75px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.party.selected {
+    background-color: orangered;
+    color: white;
+}
+
+.majority {
+    color: green;
+    fill: green;
+}
+
+.minority {
+    color: red;
+    fill: red;
+}

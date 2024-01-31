@@ -1,0 +1,9 @@
+<div class="student">
+    <header>Student</header>
+    <p>{{ firstName }}</p>
+    <p>{{ points }} points</p>
+    <button [disabled]="points >= 5" (click)="addPoint()">Add point</button>
+    <button [disabled]="points <= 0" (click)="removePoint()">Remove point</button>
+    <br>
+    <button (click)="removeStudent()">x</button>
+</div>

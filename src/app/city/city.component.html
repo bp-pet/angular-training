@@ -1,0 +1,37 @@
+<h1>City {{ id }}</h1>
+
+<div *ngIf="current != null">
+    <label>City name</label>
+    <input [(ngModel)]="current.CityName" placeholder="name">
+    <br>
+
+    <label>Country</label>
+    <input [(ngModel)]="current.Country" placeholder="country">
+    <br>
+
+    <label>Population</label>
+    <input [(ngModel)]="current.Population" placeholder="population">
+    <br>
+
+    <label>Year</label>
+    <input [(ngModel)]="current.Year" placeholder="year">
+    <br>
+
+    <label> Image URL</label>
+    <input [(ngModel)]="current.ImageUrl" placeholder="image url">
+    <br>
+
+</div>
+
+<br>
+<br>
+
+<button *ngIf="current!.CityID != 0" (click)="save()">Save</button>
+<button *ngIf="current!.CityID != 0" (click)="delete()">Delete</button>
+<button *ngIf="current!.CityID == 0" (click)="addCity()">Add</button>
+<button (click)="backToOverview()">Back to overview</button>
+<br>
+<p>{{ errorMessage }}</p>
+<br>
+<br>
+<img *ngIf="current != null" [src]="current.ImageUrl" alt="city image not found" width="300" height="300">
